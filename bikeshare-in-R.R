@@ -6,7 +6,7 @@ library(dplyr)
 
 setwd("/Users/chiarachen/DocfromMac/OneDrive/DocfromMac/R_in_Udacity/bikeshare")
 
-# Load datasets
+# Load datasets and redefine
 chicago_df <- read.csv("chicago.csv",check.names = F,row.names = 1)
 chicago_df <- na.omit(chicago_df)
 newyork_df <- read.csv("new-york-city.csv",check.names = F,row.names = 1)
