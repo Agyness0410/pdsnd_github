@@ -4,7 +4,7 @@ library(dplyr)
 
 setwd("/Users/chiarachen/DocfromMac/OneDrive/DocfromMac/R_in_Udacity/bikeshare")
 
-# Load datasets
+# Load datasets and redefine
 chicago_df <- read.csv("chicago.csv",check.names = F,row.names = 1)
 chicago_df <- na.omit(chicago_df)
 newyork_df <- read.csv("new-york-city.csv",check.names = F,row.names = 1)
@@ -38,14 +38,14 @@ ggplot(mean_time,aes(x=city,y=mean_duration),fill=city) +
 #----------and washington has the longest travel time。
 
 #3---- The counts of each user type
-user_type1 <- chicago_df %>% 
-  group_by(`User Type`)  %>% 
+user_type1 <- chicago_df %>%
+  group_by(`User Type`)  %>%
   summarise(counts = n())
-user_type2 <- newyork_df %>% 
-  group_by(`User Type`)  %>% 
+user_type2 <- newyork_df %>%
+  group_by(`User Type`)  %>%
   summarise(counts = n())
-user_type3 <- washington_df %>% 
-  group_by(`User Type`)  %>% 
+user_type3 <- washington_df %>%
+  group_by(`User Type`)  %>%
   summarise(counts = n())
 user_type2 <- user_type2[-1,]
 user_type <- data.frame(user_type=c("Customer","Subscriber","Dependent"),
